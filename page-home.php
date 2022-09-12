@@ -19,10 +19,31 @@
       endif;
       ?>
   </section>
-  <section id="home-marquee"> MARQUEE </section>
-  <section id="home-featured-products"> FEATURED PRODUCTS </section>
-  <section id="home-carousel"> CAROUSEL </section>
-  <section id="home-cards"> CARDS </section>
+  <div class="bg-outline-ourico">
+    <section id="home-marquee">
+      <div class="marquee">
+      <span>
+          <?php
+          $args = array(
+          'category_name' => 'marquee',
+          'posts_per_page' => 1
+          );
+          query_posts( $args );
+          if(have_posts()) :
+          while (have_posts()) : the_post();
+          the_content();
+          endwhile;
+          ?>
+          <?php endif; ?>
+        </span>
+      </div>
+    </section>
+    <section id="home-featured-products"> FEATURED PRODUCTS </section>
+    <section id="home-carousel"> CAROUSEL </section>
+    <section id="home-cards"> CARDS </section>
+  </div>
+  <div class="bg-mar">
+  </div>
 </main>
 
 <?php get_header()?>

@@ -1,6 +1,7 @@
 body {
   font-family: "Cirka Regular" !important;
-  color: black;
+  color: #F8f8f8;
+  background-color: #D9480D
 }
 
 main {
@@ -67,9 +68,20 @@ section {
   width: 50%
 }
 
-
 #home-marquee {
-  height: 20vh
+  height: 20vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#home-marquee .marquee {
+  animation: MoveLeft 800s infinite;
+}
+
+#home-marquee span {
+  white-space: nowrap;
+  font-size: 40px;
 }
 
 #home-featured-products {
