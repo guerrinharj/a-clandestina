@@ -69,7 +69,7 @@ section {
 }
 
 #home-marquee {
-  height: 20vh;
+  padding: 30px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -85,7 +85,14 @@ section {
 }
 
 #home-featured-products {
-  height: 40vh
+  padding: 80px;
+
+}
+
+#home-featured-products ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #home-carousel {

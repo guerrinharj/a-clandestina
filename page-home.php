@@ -38,7 +38,25 @@
         </span>
       </div>
     </section>
-    <section id="home-featured-products"> FEATURED PRODUCTS </section>
+    <section id="home-featured-products">
+
+    <ul class="products">
+      <?php
+        $args = array(
+          'post_type' => 'product',
+          'posts_per_page' => 4,
+          'orderby' => 'rand'
+          );
+        $loop = new WP_Query( $args );
+        if ( $loop->have_posts() ) {
+          while ( $loop->have_posts() ) : $loop->the_post();
+            get_template_part('template-parts/content-home-featured-products');
+          endwhile;
+        }
+      ?>
+    </ul>
+
+    </section>
     <section id="home-carousel"> CAROUSEL </section>
     <section id="home-cards"> CARDS </section>
   </div>
